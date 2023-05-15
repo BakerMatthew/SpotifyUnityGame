@@ -12,7 +12,7 @@ public class GameStart : MonoBehaviour
 
     public void NewGameButton()
     {
-        if (string.IsNullOrEmpty(ArtistInputField.text))
+        if (string.IsNullOrWhiteSpace(ArtistInputField.text))
         {
             return;
         }
