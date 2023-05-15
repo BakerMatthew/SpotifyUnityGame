@@ -6,5 +6,4 @@ using UnityEngine.UI;
 public class SpotifyDataState : MonoBehaviour
 {
     public static string Artist;
-
 }
