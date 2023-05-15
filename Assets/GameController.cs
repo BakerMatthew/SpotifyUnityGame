@@ -8,10 +8,24 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI ArtistNameText;
+    public Button OptionOneButton;
+    public Button OptionTwoButton;
+    public Button OptionThreeButton;
+    public Button OptionFourButton;
+
+    private SpotifyLogic Spotify;
+    public TextAsset jsonFile;
 
     private void Start()
     {
+        Spotify = new SpotifyLogic();
+        Spotify.SpotifyData = new SpotifyDataState();
+
+        Spotify.SpotifyData.Secrets = JsonUtility.FromJson<SpotifySecretsData>(jsonFile.text);
+
         ArtistNameText.text = SpotifyDataState.Artist;
+
+        Spotify.PrepareAccessToken();
     }
 
     public void ReturnToStartingScene()
