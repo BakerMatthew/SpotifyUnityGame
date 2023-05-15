@@ -26,6 +26,14 @@ public class GameController : MonoBehaviour
         ArtistNameText.text = SpotifyDataState.Artist;
 
         Spotify.PrepareAccessToken();
+        var artistTracks = Spotify.GetListOfArtistsTopFourTracks();
+
+        PrepareButtonGame(artistTracks);
+    }
+
+    private void PrepareButtonGame(List<Track> artistTracks)
+    {
+
     }
 
     public void ReturnToStartingScene()
